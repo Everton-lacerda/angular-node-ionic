@@ -1,15 +1,15 @@
 <div class="admin-container-body">
-  <mat-toolbar color="primary" class="admin_toolbar">
+  <mat-toolbar color="primary" class="admin_toolbar" *ngIf="isLogged">
     <button mat-button (click)="sidenav.toggle()" > 
       <mat-icon>menu</mat-icon>
     </button>
-    <h1>GetMestres</h1>
+    <h1 class="link" routerLink="/">GetMestres</h1>
   </mat-toolbar>
-  <mat-sidenav-container class="admin_side-nav-container" >
+  <mat-sidenav-container class="admin_side-nav-container" [ngClass]="{'remove-margin-top': !isLogged}">
     <mat-sidenav #sidenav mode=over> 
        <mat-nav-list>
          <h3 mat-subheader>Cadastros</h3>
-         <a mat-list-item>
+         <a mat-list-item routerLink="/categorys" (click)="sidenav.toggle()">
           <mat-icon>bookmark</mat-icon> 
           Categorias</a>
          <a mat-list-item>
@@ -39,8 +39,7 @@
        </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <app-cards-dashboard></app-cards-dashboard>
-      <app-pedidos-pendentes></app-pedidos-pendentes>
+      <ngx-spinner></ngx-spinner>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

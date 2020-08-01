@@ -2,6 +2,7 @@ import "reflect-metadata";
 import {createConnection} from "typeorm";
 import * as express from "express";
 import * as bodyParser from "body-parser";
+import * as cors from 'cors'
 import {Request, Response} from "express";
 import {Routes} from "./routes";
 import config from './config/config'
@@ -10,7 +11,9 @@ import auth from './middleware/auth'
 // create express app
 const app = express();
 app.use(bodyParser.json());
-app.use(auth);
+app.use(cors());
+//  app.use(auth);
+
 
 // register express routes from defined application routes
 Routes.forEach(route => {
@@ -26,7 +29,7 @@ Routes.forEach(route => {
                     res.json(d)
                 }
             })
-
+ 
         } else if (result !== null && result !== undefined) {
             res.json(result);
         }

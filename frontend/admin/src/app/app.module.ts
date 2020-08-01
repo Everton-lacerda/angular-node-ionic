@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,29 +13,50 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 import { PedidosPendentesComponent } from './components/pedidos-pendentes/pedidos-pendentes.component';
-import { CardsDashboardComponent } from './components/cards-dashboard/cards-dashboard.component'
+import { CardsDashboardComponent } from './components/cards-dashboard/cards-dashboard.component';
+import { CategorysComponent } from './pages/categorys/categorys.component';
+import { CategoryComponent } from './pages/category/category.component'
+import { HttpClientModule } from '@angular/common/http';
+
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     PedidosPendentesComponent,
-    CardsDashboardComponent
+    CardsDashboardComponent,
+    CategorysComponent,
+    CategoryComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    NgxSpinnerModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    MatCardModule
+    MatInputModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
