@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.isLogged = this.userService.isStaticLogged
     this.userService.isLogged.subscribe(logged => {
         this.isLogged = logged
     })
