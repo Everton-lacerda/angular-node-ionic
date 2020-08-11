@@ -37,6 +37,10 @@ const routes: Routes = [
             path: 'new',
             loadChildren: () => import('../nova-solicitacao/nova-solicitacao.module').then( m => m.NovaSolicitacaoPageModule)
           },
+          {
+            path: 'newcategory',
+            loadChildren: () => import('../nova-solicitacao-subcategoria/nova-solicitacao-subcategoria-routing.module').then( m => m.NovaSolicitacaoSubcategoriaPageRoutingModule)
+          },
         ]
       },
       {
