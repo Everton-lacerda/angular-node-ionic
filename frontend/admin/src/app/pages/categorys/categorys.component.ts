@@ -22,13 +22,15 @@ export class CategorysComponent implements OnInit {
   constructor(private categorySrv: CategoryService) { }
 
   async ngOnInit() {
-    this.bind()
+    const categorys = await this.categorySrv.getAll()
+     this.dataSource = new MatTableDataSource(categorys.data)
+    // this.bind()
   }
 
   async bind(): Promise<void> {
-    const categorys = await this.categorySrv.getAll()
-    this.dataSource = new MatTableDataSource(categorys.data)
-    this.dataSource.paginator = this.paginator
+  
+    // this.dataSource = new MatTableDataSource(categorys.data)
+    // this.dataSource.paginator = this.paginator
     // this.dataSource = categorys.data.map((it: ICategory) => {
     //   return { name: it.name, description: it.description, uid: it.uid  }
     // })

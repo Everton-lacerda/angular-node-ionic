@@ -1,0 +1,34 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom" color="tertiary"> 
+        <ion-tab-button tab="tabDisponiveis" *ngIf="perfil === 'profissional'">
+          <ion-icon name="book"></ion-icon>
+          <ion-label>Disponíveis</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="tabAceitos" *ngIf="perfil === 'profissional'">
+          <ion-icon name="checkbox"></ion-icon>
+          <ion-label>Aceitos</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="tabConcluidos" *ngIf="perfil === 'profissional'">
+          <ion-icon name="albums"></ion-icon>
+          <ion-label>Concluídos</ion-label>
+        </ion-tab-button>
+
+      <ion-tab-button tab="tabSolicitacoes" *ngIf="perfil === 'cliente'">
+        <ion-icon name="book"></ion-icon>
+        <ion-label>Minhas Solicitações</ion-label>
+      </ion-tab-button> 
+      <ion-tab-button tab="tabAtendidas" *ngIf="perfil === 'cliente'">
+        <ion-icon name="albums"></ion-icon>
+        <ion-label>Atendidas</ion-label>
+      </ion-tab-button>  
+
+    <ion-tab-button tab="tabPerfil">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>

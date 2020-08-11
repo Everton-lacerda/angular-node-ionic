@@ -29,6 +29,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component'
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
+import { SubCategorysComponent } from './pages/sub-categorys/sub-categorys.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     CategorysComponent,
     CategoryComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SubCategoryComponent,
+    SubCategorysComponent
   ],
   imports: [
     FormsModule,
@@ -58,7 +63,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatCardModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

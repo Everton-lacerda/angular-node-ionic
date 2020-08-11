@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Solicitações</ion-title> 
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  
+  <ion-card *ngFor="let request of list">
+    <ion-card-title>
+      {{request.title}}
+    </ion-card-title>
+    <ion-card-subtitle>
+      <ion-label>{{request.subCategory.name}}</ion-label> 
+    </ion-card-subtitle>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>{{ request.description }}</ion-label> 
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="info_card">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-label> 11/03/1992</ion-label> 
+          </ion-col>
+          <ion-col class="info_card">
+            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+            <ion-label> 0 Mensagem </ion-label> 
+          </ion-col>
+        </ion-row>
+      </ion-grid> 
+    </ion-card-content>
+  </ion-card> 
+
+  <ion-card *ngIf="list.length === 0">
+    <ion-card-title class="ion-text-center">Sem Solicitações</ion-card-title>
+    <ion-card-content>
+     Você ainda não fez nenhuma solicitação, clique no botão + para começar :D
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab  vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="tertiary" routerLink='/tabs/tabSolicitacoes/new' routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

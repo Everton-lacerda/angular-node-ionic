@@ -1,0 +1,18 @@
+ion-content {
+    --background: var(--ion-color-light)
+}
+
+ion-grid {
+    --ion-grid-padding: 5px
+}
+
+ion-col > div {
+    background: #ffff;
+    color: #444343;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px  #a09b9b;
+}
